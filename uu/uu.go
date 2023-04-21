@@ -20,6 +20,7 @@ const (
 	api_cancelOrder            = "cancelorder.ashx"
 	api_gethomeservicefee      = "gethomeservicefee.ashx" // 查违约金
 	api_addTips                = "/payonlinefee.ashx"     // 加小费
+	api_getCityList            = "citylist.ashx"          // 开通城市列表
 )
 
 var (
