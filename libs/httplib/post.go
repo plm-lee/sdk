@@ -2,10 +2,10 @@ package httplib
 
 import (
 	"bytes"
+	"github.com/plm-lee/sdk/libs/utils"
 	"io/ioutil"
 	"mime/multipart"
 	"net/http"
-	"sdk/libs/utils"
 )
 
 // PostForm post请求，Content-Type: form－data
