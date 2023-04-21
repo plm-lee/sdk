@@ -20,7 +20,7 @@ type OrderAddTipResponse struct {
 	BasicResponseParams
 }
 
-func OrderAddTips(r AddTipRequest) {
+func OrderAddTips(r AddTipRequest) (err error) {
 	order := &OrderAddTipRequestParams{
 		OrderCode: r.DeliveryId,
 		OnlineFee: int(r.Tips),
@@ -62,4 +62,6 @@ func OrderAddTips(r AddTipRequest) {
 	if resp.ReturnCode != "ok" {
 		err = errors.New(resp.ReturnMsg)
 	}
+
+	return
 }
