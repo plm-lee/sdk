@@ -3,8 +3,8 @@ package uu
 import (
 	"encoding/json"
 	"errors"
-	"sdk/libs/httplib"
-	"sdk/libs/utils"
+	"github.com/plm-lee/sdk/libs/httplib"
+	"github.com/plm-lee/sdk/libs/utils"
 	"time"
 )
 
