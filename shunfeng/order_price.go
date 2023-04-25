@@ -86,14 +86,16 @@ type OrderQueryFeeResponse struct {
 func GetOrderPrice(req QueryDeliveryFeeRequest) (resp OrderQueryFeeResponse, err error) {
 	order := &OrderQueryFeeRequestParams{
 		DevId:       getInstance().devId,
+		ShopId:      req.ShopId,
 		ShopType:    1, // 1: 使用顺丰店铺ID 2: 使用系统内部店铺id
 		UserLng:     req.ReceiverLng,
 		UserLat:     req.ReceiverLat,
 		UserAddress: req.ReceiverAddress,
+		Weight:      1000,
+		ProductType: 1, // 快餐
 		LbsType:     2, // 默认使用高德坐标系
 		GratuityFee: int(req.Tips * 100),
 		PushTime:    time.Now().Unix(),
-		ProductType: 1,
 		ReturnFlag:  511,
 	}
 
