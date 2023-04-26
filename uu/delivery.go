@@ -114,14 +114,14 @@ func SendOrderDelivery(r OrderDeliveryRequest) (orderId string, err error) {
 		return
 	}
 
-	orderId = result.OriginId
+	orderId = result.OrderCode
 	return
 }
 
 // CancelOrderDelivery 取消配送
 func CancelOrderDelivery(r CancelOrderRequest) (err error) {
 	order := &DeliveryCancelRequestParams{
-		//OrderCode: r.DeliveryNo,
+		OrderCode: r.DeliveryId,
 		OriginId:  r.OrderId,
 		Reason:    r.CancelReason,
 		Timestamp: utils.ToString(time.Now().Unix()),

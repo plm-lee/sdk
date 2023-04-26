@@ -30,6 +30,7 @@ type OrderDeliveryRequest struct {
 // CancelOrderRequest 订单取消请求结构
 type CancelOrderRequest struct {
 	OrderId      string `json:"order_id"`
+	DeliveryId   string `json:"delivery_id"` // 配送单号
 	UserOpenId   string `json:"user_openId"`
 	CancelCode   int    `json:"cancel_code"`   // 取消原因
 	CancelReason string `json:"cancel_reason"` //
