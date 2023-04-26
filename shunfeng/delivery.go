@@ -193,7 +193,7 @@ func SendOrderDelivery(req OrderDeliveryRequest) (resp SendOrderDeliveryResponse
 func CancelOrderDelivery(req CancelOrderRequest) (resp CancelOrderDeliveryResponse, err error) {
 	order := &CancelOrderDeliveryRequestParams{
 		DevId:        getInstance().devId,
-		OrderId:      req.SfOrderId, // 默认使用顺丰订单号
+		OrderId:      req.DeliveryId, // 默认使用顺丰订单号
 		OrderType:    1,
 		ShopId:       req.ShopId,
 		CancelCode:   313,

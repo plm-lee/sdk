@@ -21,8 +21,10 @@ type OrderAddTipRequestParams struct {
 func OrderAddTips(req AddTipRequest) (err error) {
 	order := &OrderAddTipRequestParams{
 		DevId:       getInstance().devId,
-		OrderId:     req.SfOrderId, // 默认使用顺丰订单号
+		OrderId:     req.DeliveryId, // 默认使用顺丰订单号
 		OrderType:   1,
+		ShopId:      req.ShopId,
+		ShopType:    1, // 1: 使用顺丰店铺ID 2: 使用系统内部店铺id
 		GratuityFee: int(req.Tips * 100),
 		PushTime:    time.Now().Unix(),
 	}

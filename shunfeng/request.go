@@ -2,7 +2,7 @@ package shunfeng
 
 import (
 	"encoding/json"
-	"errors"
+	"fmt"
 	"github.com/plm-lee/sdk/libs/httplib"
 )
 
@@ -29,7 +29,7 @@ func doPost(url string, body []byte) (respBody []byte, err error) {
 	}
 
 	if result.ErrorCode != 0 {
-		return nil, errors.New(result.ErrorMsg)
+		return nil, fmt.Errorf("%d:%s", result.ErrorCode, result.ErrorMsg)
 	}
 
 	respBody, err = json.Marshal(result.Result)
